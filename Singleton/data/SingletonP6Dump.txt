@@ -1,0 +1,130 @@
+Processing 'SingletonP6.dex'...
+Opened 'SingletonP6.dex', DEX version '035'
+DEX file header:
+magic               : 'dex\n035\0'
+checksum            : 519bbc14
+signature           : a831...0fb6
+file_size           : 1324
+header_size         : 112
+link_size           : 0
+link_off            : 0 (0x000000)
+string_ids_size     : 28
+string_ids_off      : 112 (0x000070)
+type_ids_size       : 10
+type_ids_off        : 224 (0x0000e0)
+proto_ids_size       : 6
+proto_ids_off        : 264 (0x000108)
+field_ids_size      : 2
+field_ids_off       : 336 (0x000150)
+method_ids_size     : 7
+method_ids_off      : 352 (0x000160)
+class_defs_size     : 1
+class_defs_off      : 408 (0x000198)
+data_size           : 884
+data_off            : 440 (0x0001b8)
+
+Class #0            -
+  Class descriptor  : 'Lcom/adam/app/SingletonP6;'
+  Access flags      : 0x4011 (PUBLIC FINAL ENUM)
+  Superclass        : 'Ljava/lang/Enum;'
+  Interfaces        -
+  Static fields     -
+    #0              : (in Lcom/adam/app/SingletonP6;)
+      name          : 'ENUM$VALUES'
+      type          : '[Lcom/adam/app/SingletonP6;'
+      access        : 0x101a (PRIVATE STATIC FINAL SYNTHETIC)
+    #1              : (in Lcom/adam/app/SingletonP6;)
+      name          : 'INSTANCE'
+      type          : 'Lcom/adam/app/SingletonP6;'
+      access        : 0x4019 (PUBLIC STATIC FINAL ENUM)
+  Instance fields   -
+  Direct methods    -
+    #0              : (in Lcom/adam/app/SingletonP6;)
+      name          : '<clinit>'
+      type          : '()V'
+      access        : 0x10008 (STATIC CONSTRUCTOR)
+      code          -
+      registers     : 3
+      ins           : 0
+      outs          : 3
+      insns size    : 20 16-bit code units
+0001c0:                                        |[0001c0] com.adam.app.SingletonP6.<clinit>:()V
+0001d0: 1202                                   |0000: const/4 v2, #int 0 // #0
+0001d2: 2200 0100                              |0001: new-instance v0, Lcom/adam/app/SingletonP6; // type@0001
+0001d6: 1a01 0600                              |0003: const-string v1, "INSTANCE" // string@0006
+0001da: 7030 0100 1002                         |0005: invoke-direct {v0, v1, v2}, Lcom/adam/app/SingletonP6;.<init>:(Ljava/lang/String;I)V // method@0001
+0001e0: 6900 0100                              |0008: sput-object v0, Lcom/adam/app/SingletonP6;.INSTANCE:Lcom/adam/app/SingletonP6; // field@0001
+0001e4: 1210                                   |000a: const/4 v0, #int 1 // #1
+0001e6: 2300 0900                              |000b: new-array v0, v0, [Lcom/adam/app/SingletonP6; // type@0009
+0001ea: 6201 0100                              |000d: sget-object v1, Lcom/adam/app/SingletonP6;.INSTANCE:Lcom/adam/app/SingletonP6; // field@0001
+0001ee: 4d01 0002                              |000f: aput-object v1, v0, v2
+0001f2: 6900 0000                              |0011: sput-object v0, Lcom/adam/app/SingletonP6;.ENUM$VALUES:[Lcom/adam/app/SingletonP6; // field@0000
+0001f6: 0e00                                   |0013: return-void
+      catches       : (none)
+      positions     : 
+        0x0001 line=6
+        0x000a line=4
+      locals        : 
+
+    #1              : (in Lcom/adam/app/SingletonP6;)
+      name          : '<init>'
+      type          : '(Ljava/lang/String;I)V'
+      access        : 0x10002 (PRIVATE CONSTRUCTOR)
+      code          -
+      registers     : 3
+      ins           : 3
+      outs          : 3
+      insns size    : 4 16-bit code units
+0001f8:                                        |[0001f8] com.adam.app.SingletonP6.<init>:(Ljava/lang/String;I)V
+000208: 7030 0400 1002                         |0000: invoke-direct {v0, v1, v2}, Ljava/lang/Enum;.<init>:(Ljava/lang/String;I)V // method@0004
+00020e: 0e00                                   |0003: return-void
+      catches       : (none)
+      positions     : 
+        0x0000 line=8
+      locals        : 
+        0x0000 - 0x0004 reg=0 this Lcom/adam/app/SingletonP6; 
+
+    #2              : (in Lcom/adam/app/SingletonP6;)
+      name          : 'valueOf'
+      type          : '(Ljava/lang/String;)Lcom/adam/app/SingletonP6;'
+      access        : 0x0009 (PUBLIC STATIC)
+      code          -
+      registers     : 2
+      ins           : 1
+      outs          : 2
+      insns size    : 9 16-bit code units
+000210:                                        |[000210] com.adam.app.SingletonP6.valueOf:(Ljava/lang/String;)Lcom/adam/app/SingletonP6;
+000220: 1c00 0100                              |0000: const-class v0, Lcom/adam/app/SingletonP6; // type@0001
+000224: 7120 0500 1000                         |0002: invoke-static {v0, v1}, Ljava/lang/Enum;.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum; // method@0005
+00022a: 0c00                                   |0005: move-result-object v0
+00022c: 1f00 0100                              |0006: check-cast v0, Lcom/adam/app/SingletonP6; // type@0001
+000230: 1100                                   |0008: return-object v0
+      catches       : (none)
+      positions     : 
+        0x0000 line=1
+      locals        : 
+
+    #3              : (in Lcom/adam/app/SingletonP6;)
+      name          : 'values'
+      type          : '()[Lcom/adam/app/SingletonP6;'
+      access        : 0x0009 (PUBLIC STATIC)
+      code          -
+      registers     : 4
+      ins           : 0
+      outs          : 5
+      insns size    : 10 16-bit code units
+000234:                                        |[000234] com.adam.app.SingletonP6.values:()[Lcom/adam/app/SingletonP6;
+000244: 1203                                   |0000: const/4 v3, #int 0 // #0
+000246: 6200 0000                              |0001: sget-object v0, Lcom/adam/app/SingletonP6;.ENUM$VALUES:[Lcom/adam/app/SingletonP6; // field@0000
+00024a: 2101                                   |0003: array-length v1, v0
+00024c: 2312 0900                              |0004: new-array v2, v1, [Lcom/adam/app/SingletonP6; // type@0009
+000250: 7151 0600 3032                         |0006: invoke-static {v0, v3, v2, v3, v1}, Ljava/lang/System;.arraycopy:(Ljava/lang/Object;ILjava/lang/Object;II)V // method@0006
+000256: 1102                                   |0009: return-object v2
+      catches       : (none)
+      positions     : 
+        0x0001 line=1
+      locals        : 
+
+  Virtual methods   -
+  source_file_idx   : 18 (SingletonP6.java)
+

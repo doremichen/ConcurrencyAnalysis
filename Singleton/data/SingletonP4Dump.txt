@@ -1,0 +1,95 @@
+Processing 'SingletonP4.dex'...
+Opened 'SingletonP4.dex', DEX version '035'
+DEX file header:
+magic               : 'dex\n035\0'
+checksum            : 15366133
+signature           : 26af...412a
+file_size           : 732
+header_size         : 112
+link_size           : 0
+link_off            : 0 (0x000000)
+string_ids_size     : 11
+string_ids_off      : 112 (0x000070)
+type_ids_size       : 5
+type_ids_off        : 156 (0x00009c)
+proto_ids_size       : 2
+proto_ids_off        : 176 (0x0000b0)
+field_ids_size      : 1
+field_ids_off       : 200 (0x0000c8)
+method_ids_size     : 3
+method_ids_off      : 208 (0x0000d0)
+class_defs_size     : 1
+class_defs_off      : 232 (0x0000e8)
+data_size           : 468
+data_off            : 264 (0x000108)
+
+Class #0            -
+  Class descriptor  : 'Lcom/adam/app/SingletonP4;'
+  Access flags      : 0x0001 (PUBLIC)
+  Superclass        : 'Ljava/lang/Object;'
+  Interfaces        -
+  Static fields     -
+    #0              : (in Lcom/adam/app/SingletonP4;)
+      name          : 'sInstance'
+      type          : 'Lcom/adam/app/SingletonP4;'
+      access        : 0x004a (PRIVATE STATIC VOLATILE)
+  Instance fields   -
+  Direct methods    -
+    #0              : (in Lcom/adam/app/SingletonP4;)
+      name          : '<init>'
+      type          : '()V'
+      access        : 0x10002 (PRIVATE CONSTRUCTOR)
+      code          -
+      registers     : 1
+      ins           : 1
+      outs          : 1
+      insns size    : 4 16-bit code units
+000108:                                        |[000108] com.adam.app.SingletonP4.<init>:()V
+000118: 7010 0200 0000                         |0000: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@0002
+00011e: 0e00                                   |0003: return-void
+      catches       : (none)
+      positions     : 
+        0x0000 line=8
+      locals        : 
+        0x0000 - 0x0004 reg=0 this Lcom/adam/app/SingletonP4; 
+
+    #1              : (in Lcom/adam/app/SingletonP4;)
+      name          : 'getInstance'
+      type          : '()Lcom/adam/app/SingletonP4;'
+      access        : 0x0009 (PUBLIC STATIC)
+      code          -
+      registers     : 2
+      ins           : 0
+      outs          : 1
+      insns size    : 21 16-bit code units
+000120:                                        |[000120] com.adam.app.SingletonP4.getInstance:()Lcom/adam/app/SingletonP4;
+000130: 1c01 0000                              |0000: const-class v1, Lcom/adam/app/SingletonP4; // type@0000
+000134: 1d01                                   |0002: monitor-enter v1
+000136: 6200 0000                              |0003: sget-object v0, Lcom/adam/app/SingletonP4;.sInstance:Lcom/adam/app/SingletonP4; // field@0000
+00013a: 3900 0900                              |0005: if-nez v0, 000e // +0009
+00013e: 2200 0000                              |0007: new-instance v0, Lcom/adam/app/SingletonP4; // type@0000
+000142: 7010 0000 0000                         |0009: invoke-direct {v0}, Lcom/adam/app/SingletonP4;.<init>:()V // method@0000
+000148: 6900 0000                              |000c: sput-object v0, Lcom/adam/app/SingletonP4;.sInstance:Lcom/adam/app/SingletonP4; // field@0000
+00014c: 1e01                                   |000e: monitor-exit v1
+00014e: 6200 0000                              |000f: sget-object v0, Lcom/adam/app/SingletonP4;.sInstance:Lcom/adam/app/SingletonP4; // field@0000
+000152: 1100                                   |0011: return-object v0
+000154: 0d00                                   |0012: move-exception v0
+000156: 1e01                                   |0013: monitor-exit v1
+000158: 2700                                   |0014: throw v0
+      catches       : 2
+        0x0003 - 0x000f
+          <any> -> 0x0012
+        0x0013 - 0x0014
+          <any> -> 0x0012
+      positions     : 
+        0x0000 line=11
+        0x0003 line=12
+        0x0007 line=13
+        0x000e line=11
+        0x000f line=16
+        0x0012 line=11
+      locals        : 
+
+  Virtual methods   -
+  source_file_idx   : 6 (SingletonP4.java)
+

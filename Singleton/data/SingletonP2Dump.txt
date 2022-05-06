@@ -1,0 +1,91 @@
+Processing 'SingletonP2.dex'...
+Opened 'SingletonP2.dex', DEX version '035'
+DEX file header:
+magic               : 'dex\n035\0'
+checksum            : 3f6c5a80
+signature           : 98cc...3885
+file_size           : 664
+header_size         : 112
+link_size           : 0
+link_off            : 0 (0x000000)
+string_ids_size     : 9
+string_ids_off      : 112 (0x000070)
+type_ids_size       : 3
+type_ids_off        : 148 (0x000094)
+proto_ids_size       : 2
+proto_ids_off        : 160 (0x0000a0)
+field_ids_size      : 1
+field_ids_off       : 184 (0x0000b8)
+method_ids_size     : 3
+method_ids_off      : 192 (0x0000c0)
+class_defs_size     : 1
+class_defs_off      : 216 (0x0000d8)
+data_size           : 416
+data_off            : 248 (0x0000f8)
+
+Class #0            -
+  Class descriptor  : 'Lcom/adam/app/SingletonP2;'
+  Access flags      : 0x0001 (PUBLIC)
+  Superclass        : 'Ljava/lang/Object;'
+  Interfaces        -
+  Static fields     -
+    #0              : (in Lcom/adam/app/SingletonP2;)
+      name          : 'sInstance'
+      type          : 'Lcom/adam/app/SingletonP2;'
+      access        : 0x000a (PRIVATE STATIC)
+  Instance fields   -
+  Direct methods    -
+    #0              : (in Lcom/adam/app/SingletonP2;)
+      name          : '<init>'
+      type          : '()V'
+      access        : 0x10002 (PRIVATE CONSTRUCTOR)
+      code          -
+      registers     : 1
+      ins           : 1
+      outs          : 1
+      insns size    : 4 16-bit code units
+0000f8:                                        |[0000f8] com.adam.app.SingletonP2.<init>:()V
+000108: 7010 0200 0000                         |0000: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@0002
+00010e: 0e00                                   |0003: return-void
+      catches       : (none)
+      positions     : 
+        0x0000 line=8
+      locals        : 
+        0x0000 - 0x0004 reg=0 this Lcom/adam/app/SingletonP2; 
+
+    #1              : (in Lcom/adam/app/SingletonP2;)
+      name          : 'getInstance'
+      type          : '()Lcom/adam/app/SingletonP2;'
+      access        : 0x20009 (PUBLIC STATIC DECLARED_SYNCHRONIZED)
+      code          -
+      registers     : 2
+      ins           : 0
+      outs          : 1
+      insns size    : 21 16-bit code units
+000110:                                        |[000110] com.adam.app.SingletonP2.getInstance:()Lcom/adam/app/SingletonP2;
+000120: 1c01 0000                              |0000: const-class v1, Lcom/adam/app/SingletonP2; // type@0000
+000124: 1d01                                   |0002: monitor-enter v1
+000126: 6200 0000                              |0003: sget-object v0, Lcom/adam/app/SingletonP2;.sInstance:Lcom/adam/app/SingletonP2; // field@0000
+00012a: 3900 0900                              |0005: if-nez v0, 000e // +0009
+00012e: 2200 0000                              |0007: new-instance v0, Lcom/adam/app/SingletonP2; // type@0000
+000132: 7010 0000 0000                         |0009: invoke-direct {v0}, Lcom/adam/app/SingletonP2;.<init>:()V // method@0000
+000138: 6900 0000                              |000c: sput-object v0, Lcom/adam/app/SingletonP2;.sInstance:Lcom/adam/app/SingletonP2; // field@0000
+00013c: 6200 0000                              |000e: sget-object v0, Lcom/adam/app/SingletonP2;.sInstance:Lcom/adam/app/SingletonP2; // field@0000
+000140: 1e01                                   |0010: monitor-exit v1
+000142: 1100                                   |0011: return-object v0
+000144: 0d00                                   |0012: move-exception v0
+000146: 1e01                                   |0013: monitor-exit v1
+000148: 2700                                   |0014: throw v0
+      catches       : 1
+        0x0003 - 0x0010
+          <any> -> 0x0012
+      positions     : 
+        0x0000 line=11
+        0x0007 line=12
+        0x000e line=14
+        0x0012 line=11
+      locals        : 
+
+  Virtual methods   -
+  source_file_idx   : 4 (SingletonP2.java)
+

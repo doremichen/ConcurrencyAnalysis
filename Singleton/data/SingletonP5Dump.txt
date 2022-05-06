@@ -1,0 +1,98 @@
+Processing 'SingletonP5.dex'...
+Opened 'SingletonP5.dex', DEX version '035'
+DEX file header:
+magic               : 'dex\n035\0'
+checksum            : 638864a8
+signature           : 1aef...5fce
+file_size           : 740
+header_size         : 112
+link_size           : 0
+link_off            : 0 (0x000000)
+string_ids_size     : 11
+string_ids_off      : 112 (0x000070)
+type_ids_size       : 5
+type_ids_off        : 156 (0x00009c)
+proto_ids_size       : 2
+proto_ids_off        : 176 (0x0000b0)
+field_ids_size      : 1
+field_ids_off       : 200 (0x0000c8)
+method_ids_size     : 3
+method_ids_off      : 208 (0x0000d0)
+class_defs_size     : 1
+class_defs_off      : 232 (0x0000e8)
+data_size           : 476
+data_off            : 264 (0x000108)
+
+Class #0            -
+  Class descriptor  : 'Lcom/adam/app/SingletonP5;'
+  Access flags      : 0x0001 (PUBLIC)
+  Superclass        : 'Ljava/lang/Object;'
+  Interfaces        -
+  Static fields     -
+    #0              : (in Lcom/adam/app/SingletonP5;)
+      name          : 'sInstance'
+      type          : 'Lcom/adam/app/SingletonP5;'
+      access        : 0x004a (PRIVATE STATIC VOLATILE)
+  Instance fields   -
+  Direct methods    -
+    #0              : (in Lcom/adam/app/SingletonP5;)
+      name          : '<init>'
+      type          : '()V'
+      access        : 0x10002 (PRIVATE CONSTRUCTOR)
+      code          -
+      registers     : 1
+      ins           : 1
+      outs          : 1
+      insns size    : 4 16-bit code units
+000108:                                        |[000108] com.adam.app.SingletonP5.<init>:()V
+000118: 7010 0200 0000                         |0000: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@0002
+00011e: 0e00                                   |0003: return-void
+      catches       : (none)
+      positions     : 
+        0x0000 line=8
+      locals        : 
+        0x0000 - 0x0004 reg=0 this Lcom/adam/app/SingletonP5; 
+
+    #1              : (in Lcom/adam/app/SingletonP5;)
+      name          : 'getInstance'
+      type          : '()Lcom/adam/app/SingletonP5;'
+      access        : 0x0009 (PUBLIC STATIC)
+      code          -
+      registers     : 2
+      ins           : 0
+      outs          : 1
+      insns size    : 25 16-bit code units
+000120:                                        |[000120] com.adam.app.SingletonP5.getInstance:()Lcom/adam/app/SingletonP5;
+000130: 6200 0000                              |0000: sget-object v0, Lcom/adam/app/SingletonP5;.sInstance:Lcom/adam/app/SingletonP5; // field@0000
+000134: 3900 1100                              |0002: if-nez v0, 0013 // +0011
+000138: 1c01 0000                              |0004: const-class v1, Lcom/adam/app/SingletonP5; // type@0000
+00013c: 1d01                                   |0006: monitor-enter v1
+00013e: 6200 0000                              |0007: sget-object v0, Lcom/adam/app/SingletonP5;.sInstance:Lcom/adam/app/SingletonP5; // field@0000
+000142: 3900 0900                              |0009: if-nez v0, 0012 // +0009
+000146: 2200 0000                              |000b: new-instance v0, Lcom/adam/app/SingletonP5; // type@0000
+00014a: 7010 0000 0000                         |000d: invoke-direct {v0}, Lcom/adam/app/SingletonP5;.<init>:()V // method@0000
+000150: 6900 0000                              |0010: sput-object v0, Lcom/adam/app/SingletonP5;.sInstance:Lcom/adam/app/SingletonP5; // field@0000
+000154: 1e01                                   |0012: monitor-exit v1
+000156: 6200 0000                              |0013: sget-object v0, Lcom/adam/app/SingletonP5;.sInstance:Lcom/adam/app/SingletonP5; // field@0000
+00015a: 1100                                   |0015: return-object v0
+00015c: 0d00                                   |0016: move-exception v0
+00015e: 1e01                                   |0017: monitor-exit v1
+000160: 2700                                   |0018: throw v0
+      catches       : 2
+        0x0007 - 0x0013
+          <any> -> 0x0016
+        0x0017 - 0x0018
+          <any> -> 0x0016
+      positions     : 
+        0x0000 line=11
+        0x0004 line=12
+        0x0007 line=13
+        0x000b line=14
+        0x0012 line=12
+        0x0013 line=18
+        0x0016 line=12
+      locals        : 
+
+  Virtual methods   -
+  source_file_idx   : 6 (SingletonP5.java)
+
